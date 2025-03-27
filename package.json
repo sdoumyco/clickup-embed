@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "PLAYWRIGHT_BROWSERS_PATH=$(pwd)/.playwright npx playwright install chromium",
-    "start": "node index.js"
+    "build": "PLAYWRIGHT_BROWSERS_PATH=./.playwright npx playwright install chromium",
+    "start": "PLAYWRIGHT_BROWSERS_PATH=./.playwright node index.js"
   },
   "dependencies": {
     "playwright": "^1.43.0",
