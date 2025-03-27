@@ -1,12 +1,14 @@
 const { chromium } = require('playwright');
 const express = require('express');
+const path = require('path');
 
 const CLICKUP_URL = 'https://sharing.clickup.com/9010036627/b/h/8cgmfwk-3135/c7d2175c09d08cb';
-const INTERVAL_MINUTES = 5; 
+const INTERVAL_MINUTES = 5;
 
 async function captureScreenshot() {
     const browser = await chromium.launch({
-        executablePath: require('playwright').chromium.executablePath()
+        executablePath: path.join(__dirname, '.playwright/chromium-1161/chrome-linux/chrome'),
+        args: ['--no-sandbox']
     });
     const page = await browser.newPage();
     await page.setViewportSize({ width: 1920, height: 1080 });
