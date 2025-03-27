@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "PLAYWRIGHT_BROWSERS_PATH=0 npx playwright install chromium",
+    "build": "PLAYWRIGHT_BROWSERS_PATH=$(pwd)/.playwright npx playwright install chromium",
     "start": "node index.js"
   },
   "dependencies": {
